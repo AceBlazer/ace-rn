@@ -1,4 +1,4 @@
-import boxen from "boxen";
+import boxen, { BorderStyle } from "boxen";
 import figlet from "figlet";
 
 import clone from "./modules/clone";
@@ -12,8 +12,8 @@ import log from "./modules/esthetic/log";
 
 let name = process.argv[2];
 
-const start = () => {
-  if (clone(name)) {
+const start = async () => {
+  if (await clone(name)) {
     install(name);
     log(msgs.three + highlight(msgs.cmdStart + name + msgs.cmdEnd));
   } else {
@@ -35,9 +35,11 @@ const askName = () =>
 console.log(figlet.textSync("ACE - RN"));
 console.log(
   boxen(description, {
-    padding: 1,
-    borderColor: "white",
+    borderColor: "gray",
     dimBorder: true,
+    align: "left",
+    float: "left",
+    borderStyle: BorderStyle.Round,
   })
 );
 

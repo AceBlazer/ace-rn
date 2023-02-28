@@ -1,18 +1,18 @@
 import run from "./run";
 import { url } from "../constants/data";
+import fs from "fs-extra";
+const path = require("path");
 
-import os from "os";
-
-const clone = (dest: string) => {
-  const cmd = run("git", ["clone", "--depth=1", url, dest]);
+const clone = async (dest: string) => {
+  const cmd = run("git", ["clone", "--depth=1", url, dest], "ignore");
 
   if (cmd.status == 0) {
-    if (os.platform() === "win32") {
-      run("rmdir", ["/s", "/q", `${dest}/.git`]);
-    } else {
-      run("rm", ["-rf", `${dest}/.git`]);
+    try {
+      await fs.remove(path.join(dest, ".git"));
+      return true;
+    } catch (err) {
+      return false;
     }
-    return true;
   }
 
   return false;

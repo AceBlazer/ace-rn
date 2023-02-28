@@ -13,9 +13,12 @@
   "dependencies": {
     "boxen": "4.0",
     "cross-spawn": "^7.0.3",
-    "figlet": "^1.5.2"
+    "figlet": "^1.5.2",
+    "fs-extra": "^11.1.0"
   },
   "devDependencies": {
+    "@types/cross-spawn": "^6.0.2",
+    "@types/fs-extra": "^11.0.1",
     "@types/commander": "^2.12.2",
     "@types/figlet": "^1.5.5",
     "@types/node": "^18.14.2",

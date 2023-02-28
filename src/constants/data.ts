@@ -5,7 +5,7 @@ export const msgs = {
   one: "👋 What's the name of your project? ",
   twoStart: "👌 Let's start ",
   twoEnd: "",
-  three: "🤙 Ready to go! Run ",
+  three: "🤙 You're good to go! Run ",
   cmdStart: " cd ",
   cmdEnd: " && npm start ",
   error: "👎 Try another name?",
@@ -14,26 +14,29 @@ export const msgs = {
 export const description = `The ultimate React-Native starter kit CLI 🔥🔥🔥
 
 ACE-RN starter contains:
-  - testable components / screens + clean architecture (ts, BaseView, combine providers).
-  - fonts.
-  - icomoon.
-  - redux toolkit, redux persist, thunks, custom subscribe package for a specific slice all typed.
-  - offline notice.
-  - full screen.
-  - RTL support.
-  - sentry (couldn't add sourcemaps and multiple environments, only multiple releases).
-  - i18n.
-  - theming with color schemes.
-  - network service DI, provider configurable with token&refresh, cancel token, cache, interceptors and error handling.
-  - env vars (couldn't add inline custom var so added react_app_environment env var).
-  - global loader: slice global, selector in app.js, middleware to detect loading then add it to global
-    (couldn't configure from whom it gets loading, but rather from thunk itself). From ui, dispatch directly to global reducer.
-  - global error: service => thunk (reject) => middleware (dispatch global error) => state updated by thunk => ui toast.
-  - rollback transaction (redux-undo) used as example in settings slice to undo store changes when request fails
-    should be dispatched manually.
-  - singletons that are used to store critical info in memory so it's not persisted (example: current connected user: we cant always
-    get it from secure/async storage so we get it the first time and populate our singleton. BEWARE: in this case our source of truth
-    should be always the singleton).
-  - logger per api (allowed apis for logging + allowed levels) / per user implicit (no need to add it by devs) + axios requests logs.
-  - performance: implicit: inside logger with a reference to message, should write logs "x started ..." and "x ended ..." will
-    automatically include performance for "x" (exp. included in network elapsed time).`;
+- A good/clean pattern/architecture: call service from UI => 
+service calls thunk and updates store (no return: no side effects, 
+  one source of truth: store) => UI uses selector (middlewares work in between).
+- Testable components / screens.
+- Already configured fonts.
+- Already configured icons.
+- Redux toolkit, redux persist, thunks all typed.
+- Offline notice.
+- Full screen.
+- RTL support
+- Sentry.
+- I18n.
+- Theming with color schemes (exp. dark mode).
+- Network service with DI, provider configurable with token&refresh, 
+cancel token, interceptors and error handling.
+- Environment variables already configured.
+- Global loader: middleware to detect loading then add it to global slice or 
+dispatch directly to global reducer from UI.
+- Global error: service => thunk (reject) => middleware (dispatch global error)
+ => state updated by thunk => UI toast selector.
+- Rollback transactions options in case of failure.
+- Singletons that are used to store critical info in memory but not persisted.
+- Logger per API (allowed APIs for logging + allowed levels) / per user 
+implicit (no need to add it by developers) and Networking requests logs.
+- Performance: implicit: inside logger with a reference to message.
+`;
