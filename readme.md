@@ -2,7 +2,7 @@
 A very simple CLI tool to generate the **Ultimate React Native starter kit**.
 This is a very basic CLI with no options to help developers start creating the project with already built-in production ready features in a matter of seconds. Just disable or remove any unnecessary (not needed feature from the code of the project).
 
-![ACE-RN usage image](https://i.postimg.cc/d3ByBs1R/ffff.png | width=200)
+![ACE-RN usage image](https://i.postimg.cc/d3ByBs1R/ffff.png)
 ---
 The starter kit provides:
 
