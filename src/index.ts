@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import boxen, { BorderStyle } from "boxen";
 import figlet from "figlet";
 

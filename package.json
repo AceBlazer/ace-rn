@@ -1,27 +1,42 @@
 {
   "name": "ace-rn",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.1",
+  "description": "CLI tool for the Ultimate React Native Starter Kit",
   "main": "index.js",
+  "bin": "./dist/index.js",
+  "repository": "https://github.com/AceBlazer/ace-rn",
+  "keywords": [
+    "cli",
+    "npmtool",
+    "starter",
+    "kit",
+    "react native",
+    "react-native",
+    "starter",
+    "starter project",
+    "boilerplate"
+  ],
   "scripts": {
-    "build": "npx tsc",
+    "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "author": "AceBlazer",
   "license": "ISC",
   "dependencies": {
+    "@types/figlet": "^1.5.5",
     "boxen": "4.0",
     "cross-spawn": "^7.0.3",
     "figlet": "^1.5.2",
     "fs-extra": "^11.1.0"
   },
   "devDependencies": {
+    "@types/commander": "^2.12.2",
     "@types/cross-spawn": "^6.0.2",
     "@types/fs-extra": "^11.0.1",
-    "@types/commander": "^2.12.2",
-    "@types/figlet": "^1.5.5",
     "@types/node": "^18.14.2",
-    "typescript": "^4.9.5"
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.5",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
