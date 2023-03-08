@@ -6,7 +6,11 @@ This is a very basic CLI with no options to help developers start creating the p
 ---
 The starter kit provides:
 
- - A good/clean pattern/architecture: call service from UI => service calls thunk and updates store (no return: no side effects, one source of truth: store) => UI uses selector (middlewares work in between).
+ - A good/clean pattern/architecture:  UI calls service => service dispatches a transaction to store =>
+   middleware gets transaction from store and dispatches to thunk => thunk sends request
+   and updates store => middleware removes transaction from store => UI uses selector
+   logger implicit (if all gonna be passing by transaction reducer, we add logger there)
+   performance implicit also (inside transaction).
  - Testable components / screens.
  - Already configured fonts.
  - Already configured icons.
